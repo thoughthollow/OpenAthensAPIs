@@ -20,16 +20,18 @@ if (!dir.exists("output")) {
 }
 
 # Get the configuration info
-{
-  config <- read_csv("config.csv",
-                     locale = locale(encoding = "UTF-8"),
-                     trim_ws=TRUE)
-  
-  for (i in 1:ncol(config)) {
-    assign(names(config)[i], as.character(config[,i]))
-  }
-  
-  rm(i)
+if (!file.exists("config.csv")) {
+  writeLines("You need to create and populate config.csv!\nSee: config_EXAMPLE.csv")
+} else {
+    config <- read_csv("config.csv",
+                       locale = locale(encoding = "UTF-8"),
+                       trim_ws=TRUE)
+    
+    for (i in 1:ncol(config)) {
+      assign(names(config)[i], as.character(config[,i]))
+    }
+    
+    rm(i)
 }
 ### Setup End ###
 
