@@ -1,0 +1,2 @@
+﻿api_key,end_point,domain,query
+0123456789_exampleKey_0987654321,https://reports.openathens.net/api/v1/,example.org,report?type=RESOURCE_USAGE&from=2022-01&to=2022-02&by=RESOURCE&scope=ALL_ORGANISATIONS
